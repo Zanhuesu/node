@@ -1,0 +1,57 @@
+<%- include('./common/header') %>
+<div id="root">
+    <div class="body-wrap" style="">
+        <main class="main">
+            <div class="middle-section ms-width">
+                <div class="Home-wrapper">
+                    <%- include('./common/topnav') %>
+                    <div class="welcome_section">
+                        <div class="welcome_inner">
+                            <div class="modal-body login_section">
+                                <span class="signup-signup-icon"><span><img src="https://img.icons8.com/windows/50/1da1f2/gender-neutral-user.png"/></span></span>
+                                <form class="user-connected-from">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"><span><img src="https://img.icons8.com/windows/24/000000/gender-neutral-user.png"/></span></div></div><input type="text" name="login_user" id="login_user_id" placeholder="Username" class="form-control" />
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"><span><img src="https://img.icons8.com/windows/24/000000/lock.png"/></span></div></div><input type="password" name="email_pass" id="login_pass" placeholder="Private Key" class="form-control" />
+                                </div>
+                                <div class="wel_sec"><button class="Nav-entry-link login_btn" type="button"><span class="Nav-main-btn" id="login_txt">Log In</span></button></div>
+                                </form>
+                                <div class="wel_sec_msg">Don't have an account?<span class="register_btn"> Register</span></div>
+                            </div>
+
+                            <div class="modal-body signup_section" style="display:none;">
+                                <span class="signup-signup-icon"><img src="https://img.icons8.com/windows/50/1da1f2/gender-neutral-user.png"/></span>
+                                    <input type="hidden" id="refer_by" value="<%- ref %>" />
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"> 
+                                            <span><img src="https://img.icons8.com/windows/24/000000/gender-neutral-user.png"/></span>
+                                        </div></div><input type="text" name="username" id="user_name" placeholder="Username" class="form-control" />
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"> 
+                                            <span><img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/24/000000/external-email-interface-kiranshastry-lineal-kiranshastry-1.png"/></span>
+                                        </div></div><input type="email" name="email" id="email" placeholder="Email Address" class="form-control" />
+                                    </div>
+                                    <div class="wel_sec"><button type="button" class="Nav-entry-link signup_btn"><span class="Nav-main-btn signup_txt">Signup</span></button></div>
+                                <div class="wel_sec_msg">Already a user?<span class="loginNow_btn"> Login</span></div>
+                            </div>
+
+                            <div class="modal-body msg_section" style="display:none;">
+                                <span class="signup-signup-icon"><img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/72/1da1f2/external-email-interface-kiranshastry-lineal-kiranshastry-1.png"/></span>
+                                <div class="key_section_block">
+                                    <h4 style="margin: 0px;">Verification link sent to your email address. <br>Verify your email to proceed with account creation. <br><br>Don't see an email? Check your spam folder.</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('./common/rnav', {category: category}) %>
+        </main>
+        <%- include('./common/lnav') %>
+    </div>
+</div>
+<%- include('./common/footer') %>

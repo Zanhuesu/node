@@ -1,0 +1,21 @@
+<%- include('./common/header') %>
+<div id="root">
+    <div class="body-wrap" style="">
+        <main class="main">
+            <div class="middle-section ms-width">
+                <div class="Home-wrapper">
+                    <%- include('./common/topnav') %><div class="post-header-wrapper back_sec"><div class="back_btn"><span class="middle-header-content"> Staking</span></div></div>
+                    <div class="container-fluid">
+                        <div class="database-icon"><?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="139.558px" height="139.558px" viewBox="0 0 139.558 139.558"xml:space="preserve"><g><g><path d="M54.19,65.705c29.938,0,54.19-9.709,54.19-21.681V22.344c0-11.983-24.265-21.68-54.19-21.68C24.263,0.664,0,10.36,0,22.344v21.681C0,55.996,24.256,65.705,54.19,65.705z M54.19,6.089c29.773,0,48.771,9.621,48.771,16.255c0,6.622-18.998,16.255-48.771,16.255c-29.772,0-48.771-9.633-48.771-16.255C5.419,15.71,24.418,6.089,54.19,6.089z"/><path d="M54.19,98.225c6.467,0,12.638-0.476,18.39-1.304c4.643-15.388,18.928-26.616,35.801-26.616V54.86c0,11.971-24.265,21.681-54.19,21.681C24.263,76.541,0,66.831,0,54.86v21.681C0,88.518,24.256,98.225,54.19,98.225z"/><path d="M54.19,109.057c-29.934,0-54.19-9.7-54.19-21.678v21.678c0,11.978,24.263,21.684,54.19,21.684c8.306,0,16.148-0.768,23.19-2.107c-3.997-5.906-6.342-13.006-6.394-20.648C65.696,108.673,60.058,109.057,54.19,109.057z"/><path d="M108.381,76.541c-17.214,0-31.176,13.956-31.176,31.176c0,17.227,13.962,31.177,31.176,31.177s31.177-13.95,31.177-31.177C139.558,90.497,125.595,76.541,108.381,76.541z M99.016,99.966c0-5.164,4.202-9.365,9.365-9.365c5.164,0,9.365,4.201,9.365,9.365v3.179h-3.471v-3.179c0-3.252-2.648-5.895-5.895-5.895c-3.245,0-5.888,2.643-5.888,5.895v3.179h-3.478V99.966z M121.399,123.098c0,0.957-0.785,1.742-1.723,1.742H97.11c-0.95,0-1.742-0.785-1.742-1.742V105.75c0-0.949,0.792-1.729,1.742-1.729h22.566c0.938,0,1.723,0.779,1.723,1.729V123.098z"/></g></g></svg></div>
+                        <h4 class="pg_title">Staking</h4>
+                        <p>Stsking is the process of locking your tokens in wallet or a smart contract to earn rewards in the form of more tokens.<br>On breeze blockchain, 25% of daily reward pool is allocated to staking rewards.<br><br><b>How to get started?</b><br>Simply withdraw (convert) your TMAC tokens to Wrapped format on BSC chain. Once you have your tokens in your wallet like MetaMask. Go to <a href="https://tmac.finance" target="_blank" style="color:#1da1f2">TMAC finance</a> website, select staking option to Stake your tokens in the contract and see your rewards growing with every second.<br><br><b>What are time limits for stake, unstake and rewards</b><br>There is no time limit for staking, unstaking and rewards claiming.<br><br><b>How much I can earn?</b><br>Simple, as big is your share in staking as much will be your earnings.<br></p>
+                        <center><button type="button" class="btn_pg stk_page">Start Staking</button></center>
+                    </div>
+                </div>
+            </div>
+            <%- include('./common/rnav', {category: category}) %>
+        </main>
+        <%- include('./common/lnav', {lnav: "staking"}) %>
+    </div>
+</div>
+<%- include('./common/footer') %>

@@ -1,0 +1,39 @@
+<%  likes.forEach(function(like) { 
+    let tags = like.json.tags;
+    let metatags = tags.map(s => '<a href="/tags/'+s+'">#'+s+'</a>').join(' ');
+    let catg = like.json.category; let category = catg.charAt(0).toUpperCase() + catg.slice(1);if(like.likes>0){postIncome=((like.dist)/1000000).toString()}else{postIncome=0}
+%>   
+<div>
+    <div class="inner-card-wrapper">
+        <div class="card-userPic-wrapper">
+            <a href="/profile/<%- like.author %>"><%if(like.user){%><div><img alt="<%- like.author %>" width="100%" height="49px" src="<%- like.user.profile.avatar%>" class="home_pro_pic"></div><%}else{%><div><img alt="<%- like.author %>" width="100%" height="49px" src="/images/user.png" class="home_pro_pic"></div><%}%></a>
+        </div>
+        <div class="card-content-wrapper">
+            <div class="card-content-header">
+                <div class="card-header-detail"><span class="card-header-username"><a href="/profile/<%- like.author %>">@<b><%- like.author %></b></a></span><span> <small>in</small> <a href="/category/<%- (like.json.category).toLowerCase() %>" class="card_home_cat"><%- category %></a></span><span class="card-header-dot">·</span><span class="card-header-date"><%- moment.utc(like.ts).fromNow()%></span></div>
+                <div class="card-header-more"></div>
+            </div>
+            <%if(like.json && like.json.type){var hashregex = /(^|\B)#(?![0-9_]+\b)([a-zA-Z0-9_]{1,30})(\b|\r)/g;var content=like.json.body;var ptags = content.match(hashregex);if(ptags){for(var i = 0, l = ptags.length; i < l; i++ ){content=content.replace(ptags[i], '<a style="color:rgb(0 43 255)" href="/tags/'+ptags[i].replace(/#/g, '')+'">'+ptags[i]+'</a>');};}
+            if(like.json.type==3){%><div class="post-content" data-permlink="<%- like.link %>" data-author="<%- like.author %>"><p><%- content %></p></div>
+            <%}else if(like.json.type==2){%><div class="post-content" data-permlink="<%- like.link %>" data-author="<%- like.author %>"><p><%- content %></p></div><div class="card-content-images"><a href="/post/<%- like.author %>/<%- like.link %>"><div class="card-image-link"><img alt="<%- like.link %>" src="<%- like.json.image %>" /></div></a></div>
+            <%}else if(like.json.type==1){%><div class="card-content-info card_home_title"><a href="/post/<%- like.author %>/<%- like.link %>"><%- like.json.title %></a></div>
+            <div class="card-content-info card_home_tags"><%- metatags.toString() %></div>
+            <div class="card-content-images"><a href="/post/<%- like.author %>/<%- like.link %>">
+            <div class="card-image-link"><iframe width="100%" height="auto" style="border: none;border-radius: 14px;min-height: 255px;" src="https://youtube.com/embed/<%-like.json.videoid%>?mute=1"></iframe></div></a></div>
+            <%}else if(like.json.type==0){%><div class="card-content-info card_home_title"><a href="/post/<%- like.author %>/<%- like.link %>"><%- like.json.title %></a></div>
+            <div class="card-content-info card_home_tags"><%- metatags.toString() %></div>
+            <div class="card-content-images"><a href="/post/<%- like.author %>/<%- like.link %>"><div class="card-image-link"><img alt="<%- like.link %>" src="<%- like.json.image %>" /></div></a></div>
+            <%}%>
+            <%}else{%><div class="card-content-info card_home_title"><a href="/post/<%- like.author %>/<%- like.link %>"><%- like.json.title %></a></div>
+            <div class="card-content-info card_home_tags"><%- metatags.toString() %></div>
+            <div class="card-content-images"><a href="/post/<%- like.author %>/<%- like.link %>"><div class="card-image-link"><img alt="<%- like.link %>" src="<%- like.json.image %>" /></div></a></div>
+            <%}%>
+            <div class="card-buttons-wrapper">
+                <div class="card-button-wrap">
+                    <div class="hov_up"></div><div class="likes-value"><%- like.likes %></div>
+                </div>
+                <div class="card-button-wrap"><%-0%> TMAC</div>
+            </div>
+        </div>
+    </div>
+</div><% }) %>

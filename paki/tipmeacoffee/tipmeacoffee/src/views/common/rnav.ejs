@@ -1,0 +1,9 @@
+<%  function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }; var arr = category;shuffle(arr);let selectedCat =arr.slice(0, 4); %>
+<div class="right-section"><div class="feed-wrapper">
+    <div class="feed-trending-card"><h3 class="feed-card-header">Trending</h3>
+        <% trendingTags.forEach(function(tags) { %><a href="/tags/<%- tags.m %>"><div class="feed-card-trend"><div>#<%- tags.m %></div><div><%- tags.v %> Posts</div></div></a><% }) %><a href="/explore/trends" id="sidebar_trends"><div class="feed-more" id="more_trends">Show more</div></a>
+    </div>
+    <div class="feed-trending-card"><h3 class="feed-card-header">What to follow</h3>
+        <% for(let i = 0; i < selectedCat.length; i++) { %><div class="feed-card-trend"><div class="sugg-result-wapper"><div class="search-user-details"><div class="search-user-warp"><div class="right_catg"><span class="rside_cat_img"></span><a href="/category/<%- selectedCat[i].toLowerCase() %>"><%- selectedCat[i] %></a></div><% if(loguser){ let catgFollowList = JSON.stringify(acct.categoryFollows); if((catgFollowList) && catgFollowList.includes(selectedCat[i].toLowerCase())) { %><span class="follow-btn-wrap btn_unfollow_catg" data-catg="<%- selectedCat[i] %>">Following</span><% }else{ %><span class="follow-btn-wrap btn_follow_catg" data-catg="<%- selectedCat[i] %>">Follow</span><% } } else { %><span class="follow-btn-wrap btn_follow_catg" data-catg="<% selectedCat[i] %>">Follow</span><% } %></div></div></div></div><%  } %><a href="/explore/categories" id="sidebar_categories"><div class="feed-more">Show More Categories</div></a>
+    </div>
+</div></div>

@@ -1,0 +1,50 @@
+<%- include('./header') %>
+<div id="root">
+    <div class="body-wrap" style="">
+        <main class="main">
+            <div class="middle-section ms-width">
+                <div class="Home-wrapper">
+                    <%- include('./topnav') %>
+                    <div style="text-align:center;">
+                        <% if(vtoken=='valid') {%>
+                        <div>
+                            <div class="verify_section" style="margin-top: 120px;">
+                                <h3>Great email verified, now complete signup!</h3>
+                                <img src="https://i.postimg.cc/P55BwKrr/email-verified.png" style="width: 40%;margin-top: 20px;">
+                                <h4>Username: <span class="user_name"><%-user_id %></span></h4>
+                                <div class="wel_sec"><button type="button" class="Nav-entry-link keygen_btn"><span class="Nav-main-btn keygen_txt">Proceed</span></button></div>
+                            </div>
+                            <div class="modal-body key_section" style="display:none;">
+                                <div class="key_section_block">
+                                    <span class="signup-signup-icon"><span class="fas fa-user"></span></span>
+                                    <h4>You're all set up!</h4>
+                                    <p class="key_section_description">This is the private key (password) of your account<br><span>Copy and save it securely!</span><br><span>If lost, we will not be able to recover it for you!</span></p>
+                                    <div class="input-group mb-3" style="justify-content: center;">
+                                        <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"><span class="copy_pass">Copy</a></div></div><input type="text" name="user_key" id="acct_priv_key" />
+                                    </div>
+                                    <div class="wel_sec"><div class="Nav-entry-link signin_btn"><span class="Nav-main-btn">Log In</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <%}else if(vtoken=='verified') {%>
+                        <div style="margin-top: 120px;">
+                           <h3>This link is already verified!</h3>
+                           <img src="https://img.icons8.com/pastel-glyph/64/f91880/urgent-message.png" style="margin: 20px;">
+                           <div class="wel_sec"><button type="button" class="Nav-entry-link n_signin_btn"><span class="Nav-main-btn">Login</span></button></div>
+                        </div>
+                        <%}else{%>
+                        <div style="margin-top: 120px;">
+                           <h3>This verification link has expired (does not exist)!</h3>
+                           <img src="https://img.icons8.com/pastel-glyph/64/f91880/urgent-message.png" style="margin: 20px;">
+                           <div class="wel_sec"><button type="button" class="Nav-entry-link n_signup_btn"><span class="Nav-main-btn">Signup</span></button></div>
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <%- include('./rnav', {category: category}) %>
+        </main>
+        <%- include('./lnav') %>
+    </div>
+</div>
+<%- include('./footer') %>

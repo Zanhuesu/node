@@ -1,0 +1,27 @@
+<div class="try-searching">Follow categories to explore latest posts</div>
+<div class="feed-trending-card">
+    <% for(let i = 0; i < category.length; i++) { %>
+        <div class="feed-card-trend">
+            <div class="sugg-result-wapper">
+                <div class="search-user-details">
+                    <div class="search-user-warp">
+                        <div style="display:flex;"><%- category[i] %></div>
+                        <% if(loguser){ %>
+                            <% let catgFollowList = JSON.stringify(acct.categoryFollows); %>
+                            <% if((catgFollowList) && catgFollowList.includes(category[i].toLowerCase())) { %>
+                                <button type="button" class="follow-btn-wrap btn_unfollow_catg" data-catg="<%- category[i] %>">Following</button>
+                            <% }else{ %>
+                                <button type="button" class="follow-btn-wrap btn_follow_catg" data-catg="<%- category[i] %>">Follow</button>
+                            <% } %>
+                        <% } else { %>
+                            <button class="follow-btn-wrap btn_follow_catg" data-catg="<% category[i] %>">Follow</button>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <%  } %>
+</div>
+<script>
+    
+</script>

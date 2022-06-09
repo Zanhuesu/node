@@ -1,0 +1,22 @@
+<%- include('./common/header') %>
+<div id="root">
+    <div class="body-wrap" style="">
+        <main class="main">
+            <div class="middle-section ms-width">
+                <div class="Home-wrapper">
+                    <%- include('./common/topnav') %>
+                    <div class="post-header-wrapper back_sec"><div class="back_btn"><span class="middle-header-content">Explore</span></div></div>
+                    <div class="explore-nav-menu">
+                        <div class="explore-nav-item activeTab" id="explore_trends">Trends</div>
+                        <div class="explore-nav-item" id="explore_categories">Categories</div>
+                    </div>
+                    <div id="explore_cat_trends" class="naveed"><%- include('./common/tags') %></div>
+                    <div id="explore_cat_content" style="display:none;"><%- include('./common/categories') %></div>
+                </div>
+            </div>
+            <%- include('./common/rnav', {category: category}) %>
+        </main>
+        <%- include('./common/lnav') %>
+    </div>
+</div><script type="text/javascript">var kind="<%= kind %>";</script>
+<%- include('./common/footer') %>

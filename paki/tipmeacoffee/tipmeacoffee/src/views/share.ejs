@@ -1,0 +1,59 @@
+<%- include('./common/header') %>
+<div id="root">
+  <div class="body-wrap" style="">
+    <main class="main">
+      <div class="middle-section ms-width">
+        <div class="Home-wrapper"> <%- include('./common/topnav') %>
+          <div class="editor_section" style="margin: 3em 2em 0em 2em;">
+            <h3 style="text-align: center;padding-bottom: 30px;">Share What You Like...</h3>
+            <div id="editor-container" class="ql-editor"></div>
+            <img id="postImg" src="" />
+            <input type="hidden" id="filename" name="filename" value="">
+            <input type="file" name="fileInput" id="fileInput" accept=".jpg, .jpeg, .png" style="display: none;" />
+          </div> 
+          <div class="share_options">
+            <div style="margin-top: 3rem;display: flex;justify-content: space-between;padding: 20px;margin:0px 20px;align-items: center;">
+              <div>
+                <button class="post_options" id="image-button" onclick="chooseFile();">
+                    <span class="svgIcon"><svg class="svgIcon-use" width="25" height="25"><g fill-rule="evenodd"><path d="M4.042 17.05V8.857c0-1.088.842-1.85 1.935-1.85H8.43C8.867 6.262 9.243 5 9.6 5.01L15.405 5c.303 0 .755 1.322 1.177 2 0 .077 2.493 0 2.493 0 1.094 0 1.967.763 1.967 1.85v8.194c-.002 1.09-.873 1.943-1.967 1.943H5.977c-1.093.007-1.935-.85-1.935-1.937zm2.173-9.046c-.626 0-1.173.547-1.173 1.173v7.686c0 .625.547 1.146 1.173 1.146h12.683c.625 0 1.144-.53 1.144-1.15V9.173c0-.626-.52-1.173-1.144-1.173h-3.025c-.24-.63-.73-1.92-.873-2 0 0-5.052.006-5 0-.212.106-.87 2-.87 2l-2.915.003z"></path><path d="M12.484 15.977a3.474 3.474 0 01-3.488-3.49A3.473 3.473 0 0112.484 9a3.474 3.474 0 013.488 3.488c0 1.94-1.55 3.49-3.488 3.49zm0-6.08c-1.407 0-2.59 1.183-2.59 2.59 0 1.408 1.183 2.593 2.59 2.593 1.407 0 2.59-1.185 2.59-2.592 0-1.406-1.183-2.592-2.59-2.592z"></path></g></svg></span>
+                </button>
+                <button class="post_options post_video">
+                    <span class="svgIcon"><svg class="svgIcon-use" width="25" height="25"><path d="M18.8 11.536L9.23 5.204C8.662 4.78 8 5.237 8 5.944v13.16c0 .708.662 1.165 1.23.74l9.57-6.33c.514-.394.606-1.516 0-1.978zm-.993 1.45l-8.294 5.267c-.297.213-.513.098-.513-.264V7.05c0-.36.218-.477.513-.264l8.294 5.267c.257.21.257.736 0 .933z" fill-rule="evenodd"></path></svg></span>
+                </button>
+                <button class="post_options post_link">
+                    <span class="svgIcon" style="font-size: 20px;">
+                        <svg viewBox="0 0 511.996 511.996" class="svgIcon-use" style="margin-top: 5px;height: 18px;width: 30px;"><path d="M482.037,29.958c-39.953-39.945-104.713-39.945-144.666,0L228.87,138.46c-10.402,10.402-17.954,22.519-22.938,35.405c9.216-0.35,18.423,0.077,27.52,1.707c3.524-6.81,7.791-13.329,13.5-19.029L355.454,48.041c29.918-29.918,78.583-29.918,108.501,0c29.918,29.918,29.918,78.583,0,108.501L355.454,265.043c-29.909,29.909-78.583,29.918-108.501,0c-10.94-10.94-25.617-15.65-39.945-14.601c4.992,11.861,12.203,23.023,21.862,32.683c39.945,39.945,104.713,39.945,144.666,0l108.501-108.501C521.982,134.68,521.982,69.903,482.037,29.958z"/><path d="M278.543,336.425c-3.533,6.81-7.799,13.329-13.5,19.029L156.542,463.955c-29.909,29.909-78.583,29.918-108.501,0c-29.918-29.918-29.909-78.583,0-108.501l108.501-108.501c29.918-29.918,78.583-29.918,108.501,0c10.94,10.94,25.617,15.659,39.945,14.601c-4.983-11.861-12.203-23.023-21.862-32.683c-39.945-39.945-104.713-39.945-144.666,0L29.958,337.372c-39.945,39.945-39.945,104.713,0,144.666c39.945,39.945,104.713,39.945,144.666,0l108.501-108.501c10.402-10.402,17.954-22.519,22.938-35.405C296.847,338.481,287.639,338.054,278.543,336.425z"/></svg>
+                    </span>
+                </button>
+              </div>
+              <button type="button" class="btn_pg add_post" style="width:25%;background: #1da1f2;border: 1px solid rgb(29 161 242);border-radius: 12px;color:#fff;margin:5px"><span class="add_post_txt">POST</span></button>
+            </div>
+            <div class="wel_sec_msg">Must read<span class="share_help"> <a href="/tos"> Terms &amp; Conditions</a></span>  for sharing!</div>
+          </div>
+          <div class="share_link" style="display:none;">
+              <div class="share-block"><h4 class="share_sec_title"></h4></div>
+              <div class="form-group"><input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL"></div>
+              <div class="wel_sec"><button type="button" class="Nav-entry-link share_me"><span class="Nav-main-btn" id="share_plus">Share</span></button></div>
+          </div> 
+          <div class="edit_psot" style="display: none;">
+              <input type="hidden" name="url_link" class="url_link" value="">
+              <input type="hidden" name="url_type" class="url_type" value="">
+              <div class="data-title"></div>
+              <textarea class="data-desc" id="post_desc"></textarea>
+              <input type="text" placeholder="Tags separated by space with hash sign" class="share_tags" />
+              <div class="link_bottom">
+                  <p><img src="https://img.icons8.com/ios/10/000000/link.png"/> <span id="domain_name"></span></p>
+                  <select name="category" id="share_cat"><option value="0">Select Category</option></select>
+              </div>
+              <div class="post_img card-image-link"><img class="link_image" src="" alt=""/></div>
+              <div class="wel_sec"><button type="button" class="Nav-entry-link share_new_post"><span class="Nav-main-btn edit_post_txt">Share</span></button></div>
+          </div>
+        </div>
+      </div>
+      <%- include('./common/rnav', {category: category}) %>
+    </main>
+    <%- include('./common/lnav') %>
+  </div>
+</div>
+<%- include('./common/footer') %>
+<script type="text/javascript">var selectCat = document.getElementById("share_cat");var catArray = "<%= category %>";var categories = catArray.split(",");for(var i = 0; i < categories.length; i++) {var opt = categories[i];var el = document.createElement("option");el.textContent = opt;el.value = opt;selectCat.appendChild(el);}</script>
