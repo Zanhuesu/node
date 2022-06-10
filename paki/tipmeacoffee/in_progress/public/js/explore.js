@@ -1,0 +1,1 @@
+if (kind=="trend") {show_trends();} else if(kind=="categories") {show_categories();}else{show_trends();}

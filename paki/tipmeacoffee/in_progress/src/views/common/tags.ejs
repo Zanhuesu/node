@@ -1,0 +1,10 @@
+<div class="feed-trending-card" style="background:none;">
+    <% trendingTagsAll.forEach(function(tags) { %>
+    <a href="/tags/<%- tags.m %>">
+    <div class="feed-card-trend">
+        <div>#<%- tags.m %></div>
+        <div><%- tags.v %> Posts</div>
+    </div>
+    </a>
+    <% }) %>
+</div>

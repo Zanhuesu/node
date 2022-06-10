@@ -1,0 +1,23 @@
+<%- include('./common/header') %>
+<div id="root">
+    <div class="body-wrap">
+        <main class="main">
+            <div class="middle-section ms-width">
+                <div class="Home-wrapper">
+                    <%- include('./common/topnav') %>
+                    <div class="post-header-wrapper back_sec"><div class="back_btn"><span class="middle-header-content"> Notifications</span></div></div>
+                    <div class="explore-nav-menu"><div class="explore-nav-item activeTab">Activity</div></div>
+                    <div style="margin-bottom: 20px;display: flex;justify-content: center;"><button type="button" class="btn_pg read_notify "><span class="read_noti_txt">Mark Notifications As Read</span></button></div>
+                    <table class="table tanx_table">
+                        <tbody>
+                            <% activities.forEach(function(activity) { %><tr><div style="display: flex"><td class=""><%- activity %></td class="f-16"></div></tr><% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <%- include('./common/rnav', {category: category}) %>
+        </main>
+        <%- include('./common/lnav', {lnav: "notic"}) %>
+    </div>
+</div>
+<%- include('./common/footer') %>

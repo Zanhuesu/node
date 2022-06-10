@@ -1,0 +1,21 @@
+language: node_js
+
+node_js:
+  - "0.12.3"
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install --quiet -g bower serve
+  - bower install
+
+script:
+  - DEBUG=* node server.js &
+  - node_server_pid=$! 
+  - serve --port 3000 &
+  - webserver_pid=$! 
+  - phantomjs test.js
+  - sleep 2
+  - kill $node_server_pid
+  - kill $webserver_pid
+  - echo "Done."

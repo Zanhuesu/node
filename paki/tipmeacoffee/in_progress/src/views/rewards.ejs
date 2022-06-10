@@ -1,0 +1,60 @@
+<%- include('./common/header'); %>
+<% let votesNow = todayVotes.votes; %>
+<div id="root">
+    <div class="body-wrap" style="">
+        <main class="main">
+            <div class="middle-section ms-width">
+                <div class="Home-wrapper">
+                    <%- include('./common/topnav') %><div class="post-header-wrapper back_sec"><div class="back_btn"><span class="middle-header-content"> Reward Pool</span></div></div>
+                    <div class="reward_sec">
+                        <div><h4>TMAC Reward Pool Distribution of Breeze Blockchain</h4></div>
+                        <div class="reward_msg">
+                            A simple proof of likes network where a block (having upvote transaction) generates 0.3 TMAC tokens. These tokens are distributed among all contributors of our community as per the below given pool share.
+                        </div>
+                        <div class="rewards_daily">
+                            <div class="rewards_daily_sec">
+                                <h3>
+                                    <!--<div class="reward_amount">Likes Today: <%- votesNow %></div>-->
+                                    <div class="today_pool">Reward Pool Share</div>
+                                </h3>
+                                <p>Tokens generated in each block are distributed as per following share</p>
+                                <form class="reward_form">
+                                    <div class="row rewards_fileds">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">Authors </span></div><div><span>12%</span></div>
+                                    </div>
+                                    <div class="row rewards_fileds">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">Curators </span></div><div><span>8%</span></div>
+                                    </div>
+                                    <div class="row rewards_fileds">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">Affiliates / Airdrop </span></div><div><span>2%</span></div>
+                                    </div>
+                                    <div class="row rewards_fileds">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">Staking </span></div><div><span>30%</span></div>
+                                    </div>
+                                    <div class="row rewards_fileds">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">LP Mining </span></div><div><span>20%</span></div>
+                                    </div>
+                                    <div class="row rewards_fileds">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">Witnesses </span></div><div><span>15%</span></div>
+                                    </div>
+                                    <div class="row rewards_fileds">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">DAF </span></div><div><span>2%</span></div>
+                                    </div>
+                                    <div class="row rewards_fileds">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">Charity </span></div><div><span>1%</span></div>
+                                    </div>
+                                    <div class="row rewards_fileds" style="border-bottom: none;">
+                                        <div><span class="rside_cat_img">.</span><span class="rewards_type">Foundation (DAO) </span></div><div><span>10%</span></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('./common/rnav', {cate: category}) %>
+        </main>
+        <%- include('./common/lnav', {lnav: "reward"}) %>
+    </div>
+</div>
+<%- include('./common/footer') %>
