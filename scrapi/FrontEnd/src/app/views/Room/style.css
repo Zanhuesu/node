@@ -1,0 +1,25 @@
+.room {
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: #ededed;
+}
+.chat--no-room {
+	flex-grow: 10;
+}
+.chat--no-room .chat__header {
+	height: 3rem;
+}
+
+.chat--no-room .chat__body {
+	height: calc(100vh - 4rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.chat--no-room .chat__body p {
+	text-align: center;
+	font-style: italic;
+	color: gray;
+	font-size: 1.5rem;
+	font-weight: 600;
+}

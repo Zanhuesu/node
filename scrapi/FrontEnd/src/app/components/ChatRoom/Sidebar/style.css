@@ -1,0 +1,40 @@
+.sidebar {
+	flex-grow: 1;
+	background-color: #023047;
+	color: #fff;
+}
+
+/* TODO revert if has search func */
+/* .sidebar__search {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	background-color: #f6f6f6;
+	height: 2.3rem;
+	padding: 0.8rem;
+}
+.sidebar__searchContainer {
+	display: flex;
+	align-items: center;
+	background-color: white;
+	width: 100%;
+	height: 2rem;
+	border-radius: 1.3rem;
+}
+.sidebar__searchContainer > .MuiSvgIcon-root {
+	color: gray;
+	padding: 0.8rem;
+}
+.sidebar__searchContainer > input {
+	border: none;
+	outline-width: 0;
+	margin-left: 0.8rem;
+} */
+
+.sidebar__scrollbar {
+	height: 100%;
+	width: 100%;
+}
+.sidebar__rooms {
+	height: calc(100vh - 3.67rem);
+}

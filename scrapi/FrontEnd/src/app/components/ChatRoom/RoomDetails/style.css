@@ -1,0 +1,17 @@
+.room__details {
+	flex-grow: 1;
+	text-align: center;
+	padding: 5rem 0;
+	background-color: #fff;
+	border: 1px solid #cecece;
+}
+.room__details .avatar--large {
+	margin: auto;
+}
+.room__details h1 {
+	margin: 1rem 0 0;
+	font-weight: 700;
+}
+.room__details p {
+	margin: 0.25rem 0 1rem;
+}

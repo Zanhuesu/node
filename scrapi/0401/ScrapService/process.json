@@ -1,0 +1,8 @@
+{
+  "apps" : [{
+      "script": "scrapMTG.py",
+      "error_file": "/dev/null",
+      "out_file": "/dev/null",
+      "interpreter" : "python3",
+  }]
+}
