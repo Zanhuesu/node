@@ -1,0 +1,38 @@
+{
+  "name": "hddserial",
+  "version": "1.0.0",
+  "description": "Get the HDD,SDD Serial Number for Node js io.js on Windows and Linux and MacOS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ihabhamad/node-hddserial.git"
+  },
+  "keywords": [
+    "node hdd",
+    "node sdd",
+    "node hdd info",
+    "node sdd info",
+    "node hard disk info",
+    "node hdd serialnumber",
+    "node sdd serialnumber",
+    "node hard disk serialnumber",
+    "node hdd serial",
+    "node sdd serial",
+    "node hard disk serial"
+  ],
+  "author": "Ihab Hamad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ihabhamad/node-hddserial/issues"
+  },
+  "homepage": "https://github.com/ihabhamad/node-hddserial",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "hddserial": "^0.0.7",
+    "os": "^0.1.2",
+    "systeminformation": "^5.11.22"
+  }
+}
